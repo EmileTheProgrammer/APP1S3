@@ -28,16 +28,17 @@ public class TestMenuFact02 {
         PlatSante ps5 = new PlatSante(14,"PlatSante4",50,11,11,11);
 
 
-        Menu m1 = new Menu("menufact.Menu 1");
-        Menu m2 = new Menu("menufact.Menu 2");
+        /*Menu m1 = new Menu("menufact.Menu 1");
+        Menu m2 = new Menu("menufact.Menu 2");*/
+        Menu m1 = Menu.getInstance("menufact.Menu 1");
+        Menu m2 = Menu.getInstance("menufact.Menu 1");
 
         Facture f1 = new Facture("Ma facture");
 
         Client c1 = Client.getInstance(1,"Mr Client","1234567890");
 
-
         t.test1_AffichePlatsAuMenu(trace, p1,p2,p3,p4,p5);
-        t. test2_AffichePlatsSante(trace, ps1,ps2,ps3,ps4,ps5);
+        t.test2_AffichePlatsSante(trace, ps1,ps2,ps3,ps4,ps5);
 
         t.test4_AjoutPlatsAuMenu(trace, m1, p1, p2, ps1, ps2, m2, p3, p4, ps3, ps4);
 

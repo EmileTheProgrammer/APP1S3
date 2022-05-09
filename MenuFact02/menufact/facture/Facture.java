@@ -1,5 +1,6 @@
 package menufact.facture;
 
+import chef.Chef;
 import menufact.Client;
 import menufact.facture.exceptions.FactureException;
 import menufact.plats.PlatChoisi;
@@ -19,6 +20,8 @@ public class Facture {
     private ArrayList<PlatChoisi> platchoisi = new ArrayList<PlatChoisi>();
     private int courant;
     private Client client;
+
+    private Chef chef;
 
 
     /**********************Constantes ************/
@@ -75,14 +78,16 @@ public class Facture {
      */
     public void payer()
     {
-       etat = new FactPayee();
+       etat = etat.changerState(FactureEtat.PAYEE);
+       System.out.println(etat.getState());
     }
     /**
      * Permet de chager l'état de la facture à FERMEE
      */
     public void fermer()
     {
-       etat = new FactFermee();
+       etat = etat.changerState(FactureEtat.FERMEE);
+       System.out.println(etat.getState());
     }
 
     /**
@@ -93,12 +98,9 @@ public class Facture {
     {
         if (etat.getState() == FactureEtat.PAYEE)
             throw new FactureException("La facture ne peut pas être reouverte.");
-        else
-            etat = new FactOuvert();
-    }
-
-    public void setState(State state){
-        state.changerState(this);
+        else {
+            etat = etat.changerState(FactureEtat.OUVERTE);
+        }
     }
 
     /**
@@ -117,6 +119,8 @@ public class Facture {
     public Facture(String description) {
         date = new Date();
         etat = new FactOuvert();
+        chef = Chef.getInstance();
+        chef.setNom("MasterChef");
         courant = -1;
         this.description = description;
     }
@@ -129,8 +133,10 @@ public class Facture {
      */
     public void ajoutePlat(PlatChoisi p) throws FactureException
     {
-        if (etat.getState() == FactureEtat.OUVERTE)
+        if (etat.getState() == FactureEtat.OUVERTE) {
             platchoisi.add(p);
+            chef.notify(p);
+        }
         else
             throw new FactureException("On peut ajouter un plat seulement sur une facture OUVERTE.");
     }
