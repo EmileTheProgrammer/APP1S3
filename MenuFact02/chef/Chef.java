@@ -6,11 +6,11 @@ import ingredients.exceptions.IngredientException;
 import inventaire.Inventaire;
 import menufact.plats.PlatChoisi;
 
-public class Chef {
+public class Chef extends Observer {
     private static Chef chef;
     private Inventaire inventaire = Inventaire.getInstance();
     private String nom;
-    private Chef(){
+    public Chef(){
 
     }
 
@@ -85,5 +85,10 @@ public class Chef {
 
     public String getNom(){
         return nom;
+    }
+
+    @Override
+    public void update() {
+
     }
 }
