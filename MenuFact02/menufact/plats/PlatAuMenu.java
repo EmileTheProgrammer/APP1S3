@@ -5,6 +5,8 @@ public class PlatAuMenu {
     private String description;
     private double prix;
 
+    private IngredientPlat ingre;
+
     public PlatAuMenu(int code, String description, double prix) {
         this.code = code;
         this.description = description;
@@ -45,5 +47,13 @@ public class PlatAuMenu {
 
     public void setPrix(double prix) {
         this.prix = prix;
+    }
+
+    public void setIngredientPlat(IngredientPlat ingrPlat){
+        ingre = ingrPlat;
+    }
+
+    public IngredientPlat getIngredientPlat(){
+        return ingre;
     }
 }

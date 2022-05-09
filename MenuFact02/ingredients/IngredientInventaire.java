@@ -22,4 +22,8 @@ public class IngredientInventaire {
         else
             this.quantite = quantite;
     }
+
+    public Ingredient getIngredient(){
+        return ingredient;
+    }
 }

@@ -4,18 +4,11 @@ public class Client {
     private int idClient;
     private String nom;
     private String numeroCarteCredit;
-    private static Client client;
 
-     private Client(int idClient, String nom, String numeroCarteCredit) {
+     public Client(int idClient, String nom, String numeroCarteCredit) {
         this.idClient = idClient;
         this.nom = nom;
         this.numeroCarteCredit = numeroCarteCredit;
-    }
-
-    public static Client getInstance(int idClient, String nom, String numeroCarteCredit){
-        if(client == null)
-            client = new Client(idClient, nom, numeroCarteCredit);
-        return client;
     }
 
     public int getIdClient() {

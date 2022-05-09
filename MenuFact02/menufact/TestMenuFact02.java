@@ -35,7 +35,7 @@ public class TestMenuFact02 {
 
         Facture f1 = new Facture("Ma facture");
 
-        Client c1 = Client.getInstance(1,"Mr Client","1234567890");
+        Client c1 = new Client(1,"Mr Client","1234567890");
 
         t.test1_AffichePlatsAuMenu(trace, p1,p2,p3,p4,p5);
         t.test2_AffichePlatsSante(trace, ps1,ps2,ps3,ps4,ps5);
