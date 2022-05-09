@@ -2,9 +2,8 @@ package menufact.plats;
 
 import chef.Commande;
 import chef.EtatCommande;
-import menufact.plats.PlatAuMenu;
 
-public class PlatChoisi {
+public class PlatChoisi{
     private PlatAuMenu plat;
     private int quantite;
 
@@ -41,5 +40,9 @@ public class PlatChoisi {
 
     public EtatCommande getEtat(){
         return etat;
+    }
+
+    public double getProportion(){
+        return plat.getProportion();
     }
 }

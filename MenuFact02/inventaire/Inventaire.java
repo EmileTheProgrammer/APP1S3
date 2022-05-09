@@ -4,6 +4,7 @@ import ingredients.Ingredient;
 import ingredients.IngredientInventaire;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Inventaire {
 
@@ -17,15 +18,24 @@ public class Inventaire {
             return inventaire = new Inventaire();
         return inventaire;
     }
-    private ArrayList<IngredientInventaire> lesIngredients = new ArrayList<IngredientInventaire>();
+    private ArrayList<Ingredient> lesIngredients = new ArrayList<Ingredient>();
+    private ArrayList<IngredientInventaire> lesIngredientsInventaire = new ArrayList<IngredientInventaire>();
 
     public void ajouter (IngredientInventaire ingredient) {
-        lesIngredients.add(ingredient);
+        lesIngredientsInventaire.add(ingredient);
+        lesIngredients.add(ingredient.getIngredient());
     }
 
-    public void platConsomme(){
-
+    public List<IngredientInventaire> getIngredientInventaire(){
+        return lesIngredientsInventaire;
     }
 
+    public Ingredient getIngredient(String nom){
+        for(Ingredient ingre : lesIngredients){
+            if(ingre.getNom() == nom)
+                return ingre;
+        }
+        return null;
+    }
 
 }

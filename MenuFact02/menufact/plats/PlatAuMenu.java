@@ -1,16 +1,26 @@
 package menufact.plats;
 
+import ingredients.Fruit;
+import ingredients.Ingredient;
+
+import java.util.List;
+
 public class PlatAuMenu {
     private int code;
     private String description;
     private double prix;
 
-    private IngredientPlat ingre;
+
+
+    private double proportion;
+
+    private List<Ingredient> ingre;
 
     public PlatAuMenu(int code, String description, double prix) {
         this.code = code;
         this.description = description;
         this.prix = prix;
+        proportion = 1;
     }
 
     public PlatAuMenu() {
@@ -29,6 +39,9 @@ public class PlatAuMenu {
         return code;
     }
 
+    public double getProportion() {
+        return proportion;
+    }
     public void setCode(int code) {
         this.code = code;
     }
@@ -49,11 +62,11 @@ public class PlatAuMenu {
         this.prix = prix;
     }
 
-    public void setIngredientPlat(IngredientPlat ingrPlat){
-        ingre = ingrPlat;
+    public void setIngredientPlat(List<Ingredient> ingredientPlat){
+        ingre = ingredientPlat;
     }
 
-    public IngredientPlat getIngredientPlat(){
+    public List<Ingredient> getIngredientPlat(){
         return ingre;
     }
 }

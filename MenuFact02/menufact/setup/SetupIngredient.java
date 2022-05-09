@@ -13,7 +13,7 @@ public class SetupIngredient {
     public SetupIngredient(){
         IngredientFactory factory = new IngredientFactory();
         ingredients.add(new IngredientInventaire(factory.getIngredient("Poivre", TypeIngredient.EPICE, "EPICE"),10));
-       ingredients.add(new IngredientInventaire(factory.getIngredient("Sel", TypeIngredient.EPICE, "EPICE"),10));
+        ingredients.add(new IngredientInventaire(factory.getIngredient("Sel", TypeIngredient.EPICE, "EPICE"),10));
         ingredients.add(new IngredientInventaire(factory.getIngredient("Fraise", TypeIngredient.FRUIT, "FRUIT"),10));
         ingredients.add(new IngredientInventaire(factory.getIngredient("Pomme", TypeIngredient.FRUIT, "FRUIT"),10));
         ingredients.add(new IngredientInventaire(factory.getIngredient("Framboise", TypeIngredient.FRUIT, "FRUIT"),10));

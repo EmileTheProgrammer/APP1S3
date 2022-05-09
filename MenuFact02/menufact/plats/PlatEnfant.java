@@ -9,8 +9,9 @@ public class PlatEnfant extends PlatAuMenu{
     public PlatEnfant(int code, String description, double prix, double proportion) {
         super(code, description, prix);
         this.proportion = proportion;
-    }
 
+    }
+    @Override
     public double getProportion() {
         return proportion;
     }
