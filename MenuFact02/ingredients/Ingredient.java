@@ -1,6 +1,6 @@
 package ingredients;
 
-public class Ingredient {
+public abstract class Ingredient {
     private String nom;
     private String description;
     private TypeIngredient typeIngredient;
