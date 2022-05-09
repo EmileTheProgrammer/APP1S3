@@ -4,7 +4,8 @@ import chef.Chef;
 import menufact.Client;
 import menufact.facture.exceptions.FactureException;
 import menufact.plats.PlatChoisi;
-
+import chef.Observer;
+import menufact.plats.*;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -23,6 +24,7 @@ public class Facture {
 
     private Chef chef;
 
+    private ArrayList <Observer> obs = new ArrayList<Observer>();
 
     /**********************Constantes ************/
     private final double TPS = 0.05;
@@ -35,6 +37,20 @@ public class Facture {
     public void associerClient (Client client)
     {
         this.client = client;
+    }
+public void addObserver(Observer obs1){
+        if(!obs.contains(obs1)){
+            obs.add(obs1);
+        }}
+    public void NotifyAllObservers(){
+
+            for(int i=0; i <obs.size();i++){
+                Observer o = obs.get(i);
+                o.update();
+
+            }
+
+
     }
 
     /**

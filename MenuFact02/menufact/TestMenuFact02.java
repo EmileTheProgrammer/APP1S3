@@ -6,12 +6,12 @@ import menufact.facture.Facture;
 import menufact.plats.PlatAuMenu;
 import menufact.plats.PlatChoisi;
 import menufact.plats.PlatSante;
-
+import chef.Chef;
 public class TestMenuFact02 {
 
     public static void main(String[] args) {
         boolean trace = true;
-
+Chef chef = new Chef();
         TestMenuFact02 t = new TestMenuFact02();
 
         PlatAuMenu p1 = new PlatAuMenu(0,"PlatAuMenu0",10);
@@ -34,7 +34,8 @@ public class TestMenuFact02 {
         Menu m2 = Menu.getInstance("menufact.Menu 1");
 
         Facture f1 = new Facture("Ma facture");
-
+        f1.addObserver(chef);
+f1.NotifyAllObservers();
         Client c1 = new Client(1,"Mr Client","1234567890");
 
         t.test1_AffichePlatsAuMenu(trace, p1,p2,p3,p4,p5);
