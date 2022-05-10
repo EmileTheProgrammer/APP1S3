@@ -8,6 +8,7 @@ public class FactureView {
 
 
     public void update(Date date, String description, FactureEtat etat, ArrayList<PlatChoisi> platchoisi, int courant, Client client, double TPS, double TVQ) {
+    if(platchoisi.isEmpty()){}else{
         String lesPlats = new String();
         String factureGenere = new String();
 
@@ -38,4 +39,4 @@ public class FactureView {
         factureGenere += "          Le total est de:   " + total + "\n";
 
 
-}}
+}}}
