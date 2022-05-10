@@ -13,7 +13,7 @@ import java.util.Date;
 
 /**
  * Une facture du systeme Menufact
- * @author Domingo Palao Munoz
+ * @author Emile Boutin, Samuel Trepanier
  * @version 1.0
  */
 public class Facture {

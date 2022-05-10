@@ -1,5 +1,8 @@
 package ingredients;
 
+/**
+ * Implementation du design patern factory
+ */
 public class IngredientFactory  {
     public Ingredient getIngredient(String nom, TypeIngredient T, String description){
         if(T==TypeIngredient.FRUIT){

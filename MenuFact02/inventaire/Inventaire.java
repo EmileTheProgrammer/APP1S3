@@ -6,6 +6,10 @@ import ingredients.IngredientInventaire;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Emile Boutin , Samuel Trepanier
+ * Implementation de la classe Inventaire permettant de gerer les ingredients
+ */
 public class Inventaire {
 
     private static Inventaire inventaire;
@@ -13,6 +17,10 @@ public class Inventaire {
 
     }
 
+    /**
+     *
+     * @return
+     */
     public static Inventaire getInstance(){
         if(inventaire == null)
             return inventaire = new Inventaire();
