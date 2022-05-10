@@ -6,7 +6,7 @@ import menufact.Client;
 import menufact.facture.exceptions.FactureException;
 import menufact.plats.PlatChoisi;
 import chef.Observer;
-import menufact.plats.*;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -125,6 +125,9 @@ public void addObserver(Observer obs1){
     {
         return etat.getState();
     }
+public Date getdate(){return date;}
+    public String getDescription(){return description;}
+    public int getCourant(){return courant;}
 
     /**
      *
@@ -203,5 +206,24 @@ public void addObserver(Observer obs1){
         factureGenere += "          Le total est de:   " + total() + "\n";
 
         return factureGenere;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public double getTPS() {
+        return TPS;
+    }
+
+    public double getTVQ() {
+        return TVQ;
+    }
+    public ArrayList<PlatChoisi> getPlatChoisi(){
+        return platchoisi;
     }
 }
