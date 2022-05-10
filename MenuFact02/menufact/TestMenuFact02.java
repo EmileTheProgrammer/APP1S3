@@ -1,6 +1,11 @@
 package menufact;
 
+<<<<<<< Updated upstream
 import ingredients.exceptions.IngredientException;
+=======
+import menufact.facture.FactureController;
+import menufact.facture.FactureView;
+>>>>>>> Stashed changes
 import menufact.facture.exceptions.FactureException;
 import menufact.exceptions.MenuException;
 import menufact.facture.Facture;
@@ -35,6 +40,9 @@ Chef chef = new Chef();
         Menu m2 = Menu.getInstance("menufact.Menu 1");
 
         Facture f1 = new Facture("Ma facture");
+        FactureView view = new FactureView();
+        FactureController controller= new FactureController(f1,view);
+     //  controller.updateVue();
         f1.addObserver(chef);
 f1.NotifyAllObservers();
         Client c1 = new Client(1,"Mr Client","1234567890");
