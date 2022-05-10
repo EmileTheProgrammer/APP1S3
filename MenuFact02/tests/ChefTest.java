@@ -1,8 +1,6 @@
 package tests;
 
-import chef.Chef;
-import chef.Commande;
-import chef.EtatCommande;
+import chef.*;
 import menufact.Client;
 import menufact.Menu;
 import menufact.facture.Facture;
@@ -50,15 +48,27 @@ class ChefTest {
 
     @org.junit.jupiter.api.Test
     void enPreparation() {
+        EtatCommande etat;
+        etat=new EnPreparation();
+        plat.setEtat(new EnPreparation());
+        assertEquals(plat.getEtat().toString(), etat.toString(), "Pas la Bonne etat");
     }
 
     @org.junit.jupiter.api.Test
     void servi() {
+
+        EtatCommande etat;
+        etat=new Servi();
+        plat.setEtat(new Servi());
+        assertEquals(plat.getEtat().toString(), etat.toString(), "Pas la Bonne etat");
     }
 
     @org.junit.jupiter.api.Test
     void termine() {
-
+        EtatCommande etat;
+        etat=new Termine();
+        plat.setEtat(new Termine());
+        assertEquals(plat.getEtat().toString(), etat.toString(), "Pas la Bonne etat");
     }
 
     @org.junit.jupiter.api.Test
