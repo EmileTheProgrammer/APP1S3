@@ -35,26 +35,33 @@ public class Chef extends Observer {
 
     public void commande(PlatChoisi plat){
         plat.setEtat(new Commande());
+        System.out.println(plat.getEtat().toString());
     }
 
     public void enPreparation(PlatChoisi plat){
         plat.setEtat(new EnPreparation());
+        System.out.println(plat.getEtat().toString());
     }
 
     public void servi(PlatChoisi plat){
         plat.setEtat(new Servi());
+        System.out.println(plat.getEtat().toString());
     }
 
     public void termine(PlatChoisi plat){
         plat.setEtat(new Termine());
+        System.out.println(plat.getEtat().toString());
     }
 
     public boolean verificationIngredient(PlatChoisi plat){
         for(Ingredient verifIngre : plat.getPlat().getIngredientPlat()){
             double platQty = plat.getQuantite() * plat.getProportion();
             double inventaireQty = getQtyIngredientInventaire(verifIngre);
-            if(inventaireQty == -1 || inventaireQty - platQty < 0)
+            if(inventaireQty == -1 || inventaireQty - platQty < 0) {
+                plat.setEtat(new ImpossibleDeServir());
+                System.out.println(plat.getEtat().toString());
                 return false;
+            }
         }
         return true;
     }
@@ -73,7 +80,7 @@ public class Chef extends Observer {
             double qty = plat.getQuantite() * plat.getProportion();
             for(IngredientInventaire ingreInv : inventaire.getIngredientInventaire()){
                 if(ingreInv.getIngredient() == Ingre){
-                    ingreInv.setQuantite((int) (ingreInv.getQuantite() - qty));
+                    ingreInv.setQuantite(ingreInv.getQuantite() - qty);
                 }
             }
         }
@@ -99,7 +106,6 @@ public class Chef extends Observer {
             enPreparation(plat);
             servi(plat);
             termine(plat);
-
         }
     }
 }

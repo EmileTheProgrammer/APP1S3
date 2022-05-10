@@ -7,7 +7,7 @@ public class FactureController {
         this.model=model;
         this.view = view;
     }
-    public void updateVue(){
-view.update(model.getDate(),model.getDescription(),model.getEtat(),model.getPlatChoisi(),model.getCourant(),model.getClient(),model.getTPS(),model.getTVQ() );
+    public String updateVue(){
+        return view.update(model.getDate(),model.getDescription(),model.getEtat(),model.getPlatChoisi(),model.getCourant(),model.getClient(),model.getTPS(),model.getTVQ() );
     }
 }

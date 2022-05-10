@@ -1,6 +1,7 @@
 package menufact.facture;
 
 import chef.Chef;
+import chef.ImpossibleDeServir;
 import ingredients.exceptions.IngredientException;
 import menufact.Client;
 import menufact.facture.exceptions.FactureException;
@@ -125,7 +126,7 @@ public void addObserver(Observer obs1){
     {
         return etat.getState();
     }
-public Date getdate(){return date;}
+    public Date getdate(){return date;}
     public String getDescription(){return description;}
     public int getCourant(){return courant;}
 
@@ -138,6 +139,7 @@ public Date getdate(){return date;}
         etat = new FactOuvert();
         chef = Chef.getInstance();
         chef.setNom("MasterChef");
+        addObserver(chef);
         courant = -1;
         this.description = description;
     }
@@ -153,10 +155,16 @@ public Date getdate(){return date;}
         if (etat.getState() == FactureEtat.OUVERTE) {
             platchoisi.add(p);
             NotifyAllObservers(p);
+            if(p.getEtat() instanceof ImpossibleDeServir)
+                retirerPlat(p);
             //chef.notify(p);
         }
         else
             throw new FactureException("On peut ajouter un plat seulement sur une facture OUVERTE.");
+    }
+
+    public void retirerPlat(PlatChoisi plat){
+        platchoisi.remove(plat);
     }
 
     /**
