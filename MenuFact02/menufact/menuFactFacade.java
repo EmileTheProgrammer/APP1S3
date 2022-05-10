@@ -9,7 +9,8 @@ import java.util.Scanner;
 
 public class menuFactFacade {
 public void menuClient(){
-MenuAcceuil MenuAcceuil = new MenuAcceuil();    PlatSante ps2 = new PlatSante(3, "Salade Cesar", 8.25, 100, 10, 1);
+MenuAcceuil MenuAcceuil = new MenuAcceuil();
+PlatSante ps2 = new PlatSante(3, "Salade Cesar", 8.25, 100, 10, 1);
     Menu menu = Menu.getInstance("Menu1");
     System.out.println("Quel plat a choisir");
     Scanner sc = new Scanner(System.in);
