@@ -48,10 +48,7 @@ public void addObserver(Observer obs1){
             for(int i=0; i <obs.size();i++){
                 Observer o = obs.get(i);
                 o.update();
-
             }
-
-
     }
 
     /**

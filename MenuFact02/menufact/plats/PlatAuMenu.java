@@ -5,15 +5,11 @@ import ingredients.Ingredient;
 
 import java.util.List;
 
-public class PlatAuMenu {
+public class PlatAuMenu{
     private int code;
     private String description;
     private double prix;
-
-
-
     private double proportion;
-
     private List<Ingredient> ingre;
 
     public PlatAuMenu(int code, String description, double prix) {
