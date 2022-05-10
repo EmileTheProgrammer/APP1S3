@@ -43,7 +43,7 @@ Chef chef = new Chef();
         FactureController controller= new FactureController(f1,view);
         controller.updateVue();
         f1.addObserver(chef);
-        f1.NotifyAllObservers();
+       // f1.NotifyAllObservers();
         Client c1 = new Client(1,"Mr Client","1234567890");
 
         t.test1_AffichePlatsAuMenu(trace, p1,p2,p3,p4,p5);

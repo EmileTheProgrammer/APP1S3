@@ -18,7 +18,6 @@ import java.util.List;
 public class TestMenuFact03 {
     public static void main(String[] args) {
         TestMenuFact02 t = new TestMenuFact02();
-
         SetupIngredient setupIngredient = new SetupIngredient();
         Inventaire inventaire = Inventaire.getInstance();
         for(IngredientInventaire ingredient : setupIngredient.getListIngredients()){
@@ -26,7 +25,6 @@ public class TestMenuFact03 {
         }
 
         List<Ingredient> plat1 = new ArrayList<Ingredient>();
-        List<Ingredient> plat2;
 
         PlatAuMenu p1 = new PlatAuMenu(0,"PlatAuMenu0",10);
         plat1.add(inventaire.getIngredient("Poivre"));
