@@ -22,7 +22,7 @@ public class Menu {
         return menu;
     }
 
-    void ajoute (PlatAuMenu p)
+    public void ajoute(PlatAuMenu p)
     {
         plat.add(p);
     }
