@@ -43,11 +43,11 @@ public void addObserver(Observer obs1){
         if(!obs.contains(obs1)){
             obs.add(obs1);
         }}
-    public void NotifyAllObservers(){
+    public void NotifyAllObservers(PlatChoisi p){
 
             for(int i=0; i <obs.size();i++){
                 Observer o = obs.get(i);
-                o.update();
+                o.update(p);
             }
     }
 
@@ -152,7 +152,8 @@ public Date getdate(){return date;}
     {
         if (etat.getState() == FactureEtat.OUVERTE) {
             platchoisi.add(p);
-            chef.notify(p);
+            NotifyAllObservers(p);
+            //chef.notify(p);
         }
         else
             throw new FactureException("On peut ajouter un plat seulement sur une facture OUVERTE.");

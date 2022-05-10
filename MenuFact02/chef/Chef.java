@@ -88,7 +88,14 @@ public class Chef extends Observer {
     }
 
     @Override
-    public void update() {
+    public void update(PlatChoisi plat) {
+        commande(plat);
+        if(verificationIngredient(plat)){
+           // platConsomme(plat);
+            enPreparation(plat);
+            servi(plat);
+            termine(plat);
 
+        }
     }
 }
