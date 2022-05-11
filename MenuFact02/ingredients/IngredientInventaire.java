@@ -15,6 +15,11 @@ public class IngredientInventaire {
         return quantite;
     }
 
+    /**
+     *
+     * @param quantite
+     * @throws IngredientException
+     */
     public void setQuantite(double quantite) throws IngredientException{
 
         if (quantite < 0)

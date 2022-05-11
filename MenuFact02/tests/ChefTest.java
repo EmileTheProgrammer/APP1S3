@@ -78,10 +78,6 @@ class ChefTest {
 
     @org.junit.jupiter.api.Test
     void servi() {
-        EtatCommande etat;
-        etat=new Servi();
-        plat.setEtat(new Servi());
-        assertEquals(plat.getEtat().toString(), etat.toString(), "Pas la Bonne etat");
     }
 
     @org.junit.jupiter.api.Test

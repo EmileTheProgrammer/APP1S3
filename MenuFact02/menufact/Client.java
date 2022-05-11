@@ -1,5 +1,8 @@
 package menufact;
 
+/**
+ * Implementation de la classe client
+ */
 public class Client {
     private int idClient;
     private String nom;
