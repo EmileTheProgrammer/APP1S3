@@ -10,7 +10,7 @@ public class Chef extends Observer {
     private static Chef chef;
     private Inventaire inventaire = Inventaire.getInstance();
     private String nom;
-    public Chef(){
+    private Chef(){
 
     }
 

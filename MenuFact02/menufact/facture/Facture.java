@@ -10,6 +10,7 @@ import chef.Observer;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Une facture du systeme Menufact
@@ -40,10 +41,14 @@ public class Facture {
     {
         this.client = client;
     }
-public void addObserver(Observer obs1){
+    public void addObserver(Observer obs1){
         if(!obs.contains(obs1)){
             obs.add(obs1);
         }}
+
+    public List<Observer> getObserver(){
+        return obs;
+    }
     public void NotifyAllObservers(PlatChoisi p){
 
             for(int i=0; i <obs.size();i++){
@@ -157,7 +162,6 @@ public void addObserver(Observer obs1){
             NotifyAllObservers(p);
             if(p.getEtat() instanceof ImpossibleDeServir)
                 retirerPlat(p);
-            //chef.notify(p);
         }
         else
             throw new FactureException("On peut ajouter un plat seulement sur une facture OUVERTE.");
